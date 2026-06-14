@@ -170,6 +170,50 @@ export interface BusinessInfo {
   cajaManual: number
 }
 
+export interface Proveedor {
+  id: string
+  name: string
+  contacto: string
+  telefono: string
+  categoria: string
+  notas: string
+  businessId: string
+  createdAt: string
+  compras?: Compra[]
+}
+
+export interface Compra {
+  id: string
+  proveedorId: string
+  desc: string
+  monto: number
+  fecha: string
+  estado: string
+  businessId: string
+  createdAt: string
+  proveedor?: Proveedor
+}
+
+export interface Nota {
+  id: string
+  titulo: string
+  contenido: string
+  color: string
+  businessId: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface Meta {
+  id: string
+  nombre: string
+  tipo: string
+  objetivo: number
+  periodo: string
+  businessId: string
+  createdAt: string
+}
+
 export const api = {
   dashboard: {
     get: () => fetchAPI<DashboardData>('/dashboard'),
@@ -244,5 +288,41 @@ export const api = {
   },
   export: {
     json: () => fetchAPI<Record<string, any>>('/export'),
+  },
+  proveedores: {
+    list: () => fetchAPI<Proveedor[]>('/proveedores'),
+    create: (data: Partial<Proveedor>) =>
+      fetchAPI<Proveedor>('/proveedores', { method: 'POST', body: JSON.stringify(data) }),
+    update: (id: string, data: Partial<Proveedor>) =>
+      fetchAPI<Proveedor>(`/proveedores/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
+    delete: (id: string) =>
+      fetchAPI<void>(`/proveedores/${id}`, { method: 'DELETE' }),
+  },
+  compras: {
+    list: () => fetchAPI<Compra[]>('/compras'),
+    create: (data: Partial<Compra>) =>
+      fetchAPI<Compra>('/compras', { method: 'POST', body: JSON.stringify(data) }),
+    update: (id: string, data: Partial<Compra>) =>
+      fetchAPI<Compra>(`/compras/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
+    delete: (id: string) =>
+      fetchAPI<void>(`/compras/${id}`, { method: 'DELETE' }),
+  },
+  notas: {
+    list: () => fetchAPI<Nota[]>('/notas'),
+    create: (data: Partial<Nota>) =>
+      fetchAPI<Nota>('/notas', { method: 'POST', body: JSON.stringify(data) }),
+    update: (id: string, data: Partial<Nota>) =>
+      fetchAPI<Nota>(`/notas/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
+    delete: (id: string) =>
+      fetchAPI<void>(`/notas/${id}`, { method: 'DELETE' }),
+  },
+  metas: {
+    list: () => fetchAPI<Meta[]>('/metas'),
+    create: (data: Partial<Meta>) =>
+      fetchAPI<Meta>('/metas', { method: 'POST', body: JSON.stringify(data) }),
+    update: (id: string, data: Partial<Meta>) =>
+      fetchAPI<Meta>(`/metas/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
+    delete: (id: string) =>
+      fetchAPI<void>(`/metas/${id}`, { method: 'DELETE' }),
   },
 }

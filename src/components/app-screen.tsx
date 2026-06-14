@@ -29,6 +29,9 @@ const PedidosTab = dynamic(() => import('@/components/tabs/pedidos-tab'))
 const ClientesTab = dynamic(() => import('@/components/tabs/clientes-tab'))
 const GastosTab = dynamic(() => import('@/components/tabs/gastos-tab'))
 const AnalyticsTab = dynamic(() => import('@/components/tabs/analytics-tab'))
+const ProveedoresTab = dynamic(() => import('@/components/tabs/proveedores-tab'))
+const NotasTab = dynamic(() => import('@/components/tabs/notas-tab'))
+const MetasTab = dynamic(() => import('@/components/tabs/metas-tab'))
 
 const TABS = [
   { id: 'dashboard', label: 'Dashboard', icon: '📊' },
@@ -39,6 +42,9 @@ const TABS = [
   { id: 'clientes', label: 'Clientes', icon: '👥' },
   { id: 'gastos', label: 'Gastos', icon: '💸' },
   { id: 'analytics', label: 'Analytics', icon: '📈' },
+  { id: 'proveedores', label: 'Proveedores', icon: '🏭' },
+  { id: 'metas', label: 'Metas', icon: '🎯' },
+  { id: 'notas', label: 'Notas', icon: '📝' },
 ] as const
 
 type TabId = typeof TABS[number]['id']
@@ -141,6 +147,9 @@ export default function AppScreen() {
       case 'clientes': return <ClientesTab {...props} />
       case 'gastos': return <GastosTab {...props} />
       case 'analytics': return <AnalyticsTab {...props} />
+      case 'proveedores': return <ProveedoresTab {...props} />
+      case 'metas': return <MetasTab {...props} />
+      case 'notas': return <NotasTab {...props} />
       default: return null
     }
   }

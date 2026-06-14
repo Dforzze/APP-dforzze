@@ -25,6 +25,10 @@ model Business {
   pedidos    Pedido[]
   clientes   Cliente[]
   gastos     Gasto[]
+  proveedores Proveedor[]
+  compras    Compra[]
+  notas      Nota[]
+  metas      Meta[]
 }
 
 model User {
@@ -143,4 +147,57 @@ model Gasto {
 
   business Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
   drop     Drop?    @relation(fields: [dropId], references: [id], onDelete: SetNull)
+}
+
+model Proveedor {
+  id         String   @id @default(cuid())
+  name       String
+  contacto   String   @default("")
+  telefono   String   @default("")
+  categoria  String   @default("Tela") // Tela, Confección, Bordado, Diseño, Transporte, Otros
+  notas      String   @default("")
+  businessId String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  business   Business  @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  compras    Compra[]
+}
+
+model Compra {
+  id           String   @id @default(cuid())
+  proveedorId  String
+  desc         String
+  monto        Float
+  fecha        String
+  estado       String   @default("pagado") // pagado, pendiente, parcial
+  businessId   String
+  createdAt    DateTime @default(now())
+
+  business   Business  @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  proveedor  Proveedor @relation(fields: [proveedorId], references: [id], onDelete: Cascade)
+}
+
+model Nota {
+  id         String   @id @default(cuid())
+  titulo     String   @default("")
+  contenido  String
+  color      String   @default("#8b5cf6") // color de la nota
+  businessId String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  business Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+}
+
+model Meta {
+  id         String   @id @default(cuid())
+  nombre     String
+  tipo       String   @default("ventas") // ventas, ingresos, clientes, pedidos
+  objetivo   Float
+  periodo    String   // YYYY-MM
+  businessId String
+  createdAt  DateTime @default(now())
+
+  business Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
 }

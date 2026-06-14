@@ -1,0 +1,1411 @@
+{
+  "exportedAt": "2026-06-14T18:53:24.017Z",
+  "business": "Dforzze",
+  "cajaManual": 0,
+  "drops": [
+    {
+      "id": "cmqb82fgg001cq6bvogbc21sq",
+      "name": "COLECCION#2",
+      "desc": "",
+      "date": "2026-05-01",
+      "status": "activo",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.056Z"
+    }
+  ],
+  "productos": [
+    {
+      "id": "cmqb82fhp002sq6bvshhu9epm",
+      "name": "POLERA",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "color": "ROJO",
+      "talla": "M",
+      "stock": 0,
+      "precio": 90,
+      "precioMayor": 70,
+      "costo": 54,
+      "minStock": 2,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.101Z"
+    },
+    {
+      "id": "cmqb82fhq002uq6bvgbq5zdme",
+      "name": "POLERA",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "color": "ROJO",
+      "talla": "L",
+      "stock": 0,
+      "precio": 90,
+      "precioMayor": 70,
+      "costo": 54,
+      "minStock": 2,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.102Z"
+    },
+    {
+      "id": "cmqb82fhr002wq6bvk0j372a1",
+      "name": "POLERA",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "color": "ROSA",
+      "talla": "M",
+      "stock": 0,
+      "precio": 90,
+      "precioMayor": 70,
+      "costo": 54,
+      "minStock": 2,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.103Z"
+    },
+    {
+      "id": "cmqb82fhs002yq6bvjlzrq625",
+      "name": "POLERA",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "color": "ROSA",
+      "talla": "L",
+      "stock": 0,
+      "precio": 90,
+      "precioMayor": 70,
+      "costo": 54,
+      "minStock": 2,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.104Z"
+    },
+    {
+      "id": "cmqb82fht0030q6bvcl8wdyef",
+      "name": "POLERA",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "color": "NARANJA",
+      "talla": "M",
+      "stock": 0,
+      "precio": 90,
+      "precioMayor": 70,
+      "costo": 54,
+      "minStock": 2,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.105Z"
+    },
+    {
+      "id": "cmqb82fhu0032q6bvpr3j5qfd",
+      "name": "POLERA",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "color": "NARANJA",
+      "talla": "L",
+      "stock": 1,
+      "precio": 90,
+      "precioMayor": 70,
+      "costo": 54,
+      "minStock": 2,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.106Z"
+    }
+  ],
+  "ventas": [
+    {
+      "id": "cmqb82flx007mq6bvv6fewmun",
+      "cliente": "DANIEL",
+      "vendedor": "",
+      "fecha": "2026-05-22",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 95,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.254Z",
+      "items": [
+        {
+          "id": "cmqb82fly007oq6bvj1ngzoin",
+          "ventaId": "cmqb82flx007mq6bvv6fewmun",
+          "productoId": "cmqb82fhp002sq6bvshhu9epm",
+          "productName": "POLERA",
+          "color": "ROJO",
+          "talla": "M",
+          "qty": 1,
+          "precio": 95,
+          "subtotal": 95
+        }
+      ]
+    },
+    {
+      "id": "cmqb82flu007gq6bvi5bhgxiq",
+      "cliente": "FABIAN",
+      "vendedor": "",
+      "fecha": "2026-05-22",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 95,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.250Z",
+      "items": [
+        {
+          "id": "cmqb82flv007iq6bvn1ke3n9t",
+          "ventaId": "cmqb82flu007gq6bvi5bhgxiq",
+          "productoId": "cmqb82fhs002yq6bvjlzrq625",
+          "productName": "POLERA",
+          "color": "ROSA",
+          "talla": "L",
+          "qty": 1,
+          "precio": 95,
+          "subtotal": 95
+        }
+      ]
+    },
+    {
+      "id": "cmqb82flq007aq6bve22lvw33",
+      "cliente": "ALESKA",
+      "vendedor": "",
+      "fecha": "2026-05-22",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 95,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.246Z",
+      "items": [
+        {
+          "id": "cmqb82flr007cq6bvk1piwax0",
+          "ventaId": "cmqb82flq007aq6bve22lvw33",
+          "productoId": "cmqb82fhr002wq6bvk0j372a1",
+          "productName": "POLERA",
+          "color": "ROSA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 95,
+          "subtotal": 95
+        }
+      ]
+    },
+    {
+      "id": "cmqb82flm0074q6bv2isohcpi",
+      "cliente": "ANGEL ARON",
+      "vendedor": "",
+      "fecha": "2026-05-23",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.243Z",
+      "items": [
+        {
+          "id": "cmqb82fln0076q6bv0qoo8ldk",
+          "ventaId": "cmqb82flm0074q6bv2isohcpi",
+          "productoId": "cmqb82fhp002sq6bvshhu9epm",
+          "productName": "POLERA",
+          "color": "ROJO",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82flj006yq6bvh3j7oxwb",
+      "cliente": "ANGEL ARON",
+      "vendedor": "",
+      "fecha": "2026-05-23",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.239Z",
+      "items": [
+        {
+          "id": "cmqb82flk0070q6bvpxngc4ge",
+          "ventaId": "cmqb82flj006yq6bvh3j7oxwb",
+          "productoId": "cmqb82fht0030q6bvcl8wdyef",
+          "productName": "POLERA",
+          "color": "NARANJA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82flf006sq6bv6cb39w64",
+      "cliente": "ABDAIR",
+      "vendedor": "",
+      "fecha": "2026-05-23",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 95,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.235Z",
+      "items": [
+        {
+          "id": "cmqb82flg006uq6bvm40a4p8n",
+          "ventaId": "cmqb82flf006sq6bv6cb39w64",
+          "productoId": "cmqb82fhr002wq6bvk0j372a1",
+          "productName": "POLERA",
+          "color": "ROSA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 95,
+          "subtotal": 95
+        }
+      ]
+    },
+    {
+      "id": "cmqb82flb006mq6bvtoo6o6qx",
+      "cliente": "MATIAS MORILLO",
+      "vendedor": "",
+      "fecha": "2026-05-28",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.232Z",
+      "items": [
+        {
+          "id": "cmqb82flc006oq6bvio2mmswi",
+          "ventaId": "cmqb82flb006mq6bvtoo6o6qx",
+          "productoId": "cmqb82fht0030q6bvcl8wdyef",
+          "productName": "POLERA",
+          "color": "NARANJA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fl8006gq6bv3xftndl0",
+      "cliente": "ESTEFANO",
+      "vendedor": "",
+      "fecha": "2026-05-28",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.228Z",
+      "items": [
+        {
+          "id": "cmqb82fl9006iq6bvppruensh",
+          "ventaId": "cmqb82fl8006gq6bv3xftndl0",
+          "productoId": "cmqb82fht0030q6bvcl8wdyef",
+          "productName": "POLERA",
+          "color": "NARANJA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fl5006aq6bvfcvrvth5",
+      "cliente": "FABRICIO",
+      "vendedor": "",
+      "fecha": "2026-05-28",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 100,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.225Z",
+      "items": [
+        {
+          "id": "cmqb82fl5006cq6bv12uqfvzs",
+          "ventaId": "cmqb82fl5006aq6bvfcvrvth5",
+          "productoId": "cmqb82fhu0032q6bvpr3j5qfd",
+          "productName": "POLERA",
+          "color": "NARANJA",
+          "talla": "L",
+          "qty": 1,
+          "precio": 100,
+          "subtotal": 100
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fl10064q6bv22kougde",
+      "cliente": "DUKI",
+      "vendedor": "",
+      "fecha": "2026-05-28",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.222Z",
+      "items": [
+        {
+          "id": "cmqb82fl20066q6bv26feomih",
+          "ventaId": "cmqb82fl10064q6bv22kougde",
+          "productoId": "cmqb82fhu0032q6bvpr3j5qfd",
+          "productName": "POLERA",
+          "color": "NARANJA",
+          "talla": "L",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fky005yq6bvmn9vwdr1",
+      "cliente": "DUKI",
+      "vendedor": "",
+      "fecha": "2026-05-28",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.218Z",
+      "items": [
+        {
+          "id": "cmqb82fky0060q6bvpny0niyh",
+          "ventaId": "cmqb82fky005yq6bvmn9vwdr1",
+          "productoId": "cmqb82fht0030q6bvcl8wdyef",
+          "productName": "POLERA",
+          "color": "NARANJA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fku005sq6bv1bly80dh",
+      "cliente": "DUKI",
+      "vendedor": "",
+      "fecha": "2026-05-28",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.214Z",
+      "items": [
+        {
+          "id": "cmqb82fkv005uq6bv1gtycx0q",
+          "ventaId": "cmqb82fku005sq6bv1bly80dh",
+          "productoId": "cmqb82fhs002yq6bvjlzrq625",
+          "productName": "POLERA",
+          "color": "ROSA",
+          "talla": "L",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fkq005mq6bv0ioa9pan",
+      "cliente": "SEBASTIAN",
+      "vendedor": "",
+      "fecha": "2026-05-28",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 95,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.210Z",
+      "items": [
+        {
+          "id": "cmqb82fkr005oq6bvzl0lrj0f",
+          "ventaId": "cmqb82fkq005mq6bv0ioa9pan",
+          "productoId": "cmqb82fht0030q6bvcl8wdyef",
+          "productName": "POLERA",
+          "color": "NARANJA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 95,
+          "subtotal": 95
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fkk005gq6bvg9p695wt",
+      "cliente": "LAMS",
+      "vendedor": "",
+      "fecha": "2026-05-29",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Efectivo",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.205Z",
+      "items": [
+        {
+          "id": "cmqb82fkl005iq6bvtfqrbqek",
+          "ventaId": "cmqb82fkk005gq6bvg9p695wt",
+          "productoId": "cmqb82fhr002wq6bvk0j372a1",
+          "productName": "POLERA",
+          "color": "ROSA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fke005aq6bvkzc2o3vy",
+      "cliente": "ANTONELLA",
+      "vendedor": "",
+      "fecha": "2026-05-29",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.199Z",
+      "items": [
+        {
+          "id": "cmqb82fkg005cq6bv4x0ec6s2",
+          "ventaId": "cmqb82fke005aq6bvkzc2o3vy",
+          "productoId": "cmqb82fhr002wq6bvk0j372a1",
+          "productName": "POLERA",
+          "color": "ROSA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fjw0054q6bvc6mvua9e",
+      "cliente": "BERTHA BEATRIZ",
+      "vendedor": "",
+      "fecha": "2026-05-29",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.180Z",
+      "items": [
+        {
+          "id": "cmqb82fjx0056q6bvrekrorjj",
+          "ventaId": "cmqb82fjw0054q6bvc6mvua9e",
+          "productoId": "cmqb82fhu0032q6bvpr3j5qfd",
+          "productName": "POLERA",
+          "color": "NARANJA",
+          "talla": "L",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fjr004yq6bvdrit421f",
+      "cliente": "Toshiro",
+      "vendedor": "932634385",
+      "fecha": "2026-05-30",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.176Z",
+      "items": [
+        {
+          "id": "cmqb82fjs0050q6bvo78zta6a",
+          "ventaId": "cmqb82fjr004yq6bvdrit421f",
+          "productoId": "cmqb82fht0030q6bvcl8wdyef",
+          "productName": "POLERA",
+          "color": "NARANJA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fjn004sq6bv4eswzw8y",
+      "cliente": "Evelin JIMez",
+      "vendedor": "",
+      "fecha": "2026-05-30",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.171Z",
+      "items": [
+        {
+          "id": "cmqb82fjn004uq6bvkvkybri1",
+          "ventaId": "cmqb82fjn004sq6bv4eswzw8y",
+          "productoId": "cmqb82fhp002sq6bvshhu9epm",
+          "productName": "POLERA",
+          "color": "ROJO",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fji004mq6bvhle0d7ql",
+      "cliente": "AMGELO TULLUNAME",
+      "vendedor": "",
+      "fecha": "2026-05-31",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.167Z",
+      "items": [
+        {
+          "id": "cmqb82fjj004oq6bvi8ui4v2u",
+          "ventaId": "cmqb82fji004mq6bvhle0d7ql",
+          "productoId": "cmqb82fhr002wq6bvk0j372a1",
+          "productName": "POLERA",
+          "color": "ROSA",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fje004gq6bvbl26t1yc",
+      "cliente": "JHONEL CESPED",
+      "vendedor": "",
+      "fecha": "2026-06-02",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.163Z",
+      "items": [
+        {
+          "id": "cmqb82fjf004iq6bv3z4wku4i",
+          "ventaId": "cmqb82fje004gq6bvbl26t1yc",
+          "productoId": "cmqb82fhq002uq6bvgbq5zdme",
+          "productName": "POLERA",
+          "color": "ROJO",
+          "talla": "L",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fja004aq6bvd4lk8t1u",
+      "cliente": "JHONEL CESPED",
+      "vendedor": "",
+      "fecha": "2026-06-02",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.159Z",
+      "items": [
+        {
+          "id": "cmqb82fjb004cq6bviliyzg5m",
+          "ventaId": "cmqb82fja004aq6bvd4lk8t1u",
+          "productoId": "cmqb82fhs002yq6bvjlzrq625",
+          "productName": "POLERA",
+          "color": "ROSA",
+          "talla": "L",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fj60044q6bvianym44f",
+      "cliente": "valeria",
+      "vendedor": "",
+      "fecha": "2026-06-02",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.154Z",
+      "items": [
+        {
+          "id": "cmqb82fj70046q6bvaho0i4oo",
+          "ventaId": "cmqb82fj60044q6bvianym44f",
+          "productoId": "cmqb82fhs002yq6bvjlzrq625",
+          "productName": "POLERA",
+          "color": "ROSA",
+          "talla": "L",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fiz003yq6bv2lar505q",
+      "cliente": "gonzaloortiz",
+      "vendedor": "",
+      "fecha": "2026-06-02",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "contraaentrega",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.147Z",
+      "items": [
+        {
+          "id": "cmqb82fj20040q6bvzu9xiwwk",
+          "ventaId": "cmqb82fiz003yq6bv2lar505q",
+          "productoId": "cmqb82fhs002yq6bvjlzrq625",
+          "productName": "POLERA",
+          "color": "ROSA",
+          "talla": "L",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fid003sq6bvvoprvlt7",
+      "cliente": "abel",
+      "vendedor": "",
+      "fecha": "2026-06-03",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.126Z",
+      "items": [
+        {
+          "id": "cmqb82fie003uq6bviqjq2qn4",
+          "ventaId": "cmqb82fid003sq6bvvoprvlt7",
+          "productoId": "cmqb82fhq002uq6bvgbq5zdme",
+          "productName": "POLERA",
+          "color": "ROJO",
+          "talla": "L",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fi9003mq6bvsccor86g",
+      "cliente": "LAMS",
+      "vendedor": "",
+      "fecha": "2026-06-04",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Efectivo",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.121Z",
+      "items": [
+        {
+          "id": "cmqb82fia003oq6bv92pjsq3s",
+          "ventaId": "cmqb82fi9003mq6bvsccor86g",
+          "productoId": "cmqb82fhp002sq6bvshhu9epm",
+          "productName": "POLERA",
+          "color": "ROJO",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fi4003gq6bvvo1f64nz",
+      "cliente": "Rodrigo cruz",
+      "vendedor": "",
+      "fecha": "2026-06-10",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Transferencia",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.117Z",
+      "items": [
+        {
+          "id": "cmqb82fi5003iq6bvvxuf1mf7",
+          "ventaId": "cmqb82fi4003gq6bvvo1f64nz",
+          "productoId": "cmqb82fhp002sq6bvshhu9epm",
+          "productName": "POLERA",
+          "color": "ROJO",
+          "talla": "M",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fi0003aq6bvj8ueqy7c",
+      "cliente": "LUIGI",
+      "vendedor": "",
+      "fecha": "2026-06-10",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Yape",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.113Z",
+      "items": [
+        {
+          "id": "cmqb82fi1003cq6bvgnylld2g",
+          "ventaId": "cmqb82fi0003aq6bvj8ueqy7c",
+          "productoId": "cmqb82fhq002uq6bvgbq5zdme",
+          "productName": "POLERA",
+          "color": "ROJO",
+          "talla": "L",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    },
+    {
+      "id": "cmqb82fhv0034q6bvulbi7xe4",
+      "cliente": "ALBEYRO GONZALES",
+      "vendedor": "",
+      "fecha": "2026-06-10",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "metodoPago": "Efectivo",
+      "nota": "",
+      "total": 90,
+      "comisionPct": 0,
+      "comisionMonto": 0,
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.108Z",
+      "items": [
+        {
+          "id": "cmqb82fhw0036q6bvwv6p00kj",
+          "ventaId": "cmqb82fhv0034q6bvulbi7xe4",
+          "productoId": "cmqb82fhq002uq6bvgbq5zdme",
+          "productName": "POLERA",
+          "color": "ROJO",
+          "talla": "L",
+          "qty": 1,
+          "precio": 90,
+          "subtotal": 90
+        }
+      ]
+    }
+  ],
+  "pedidos": [
+    {
+      "id": "cmqb82flz007qq6bvv8bgzb1u",
+      "ventaId": "cmqb82flx007mq6bvv6fewmun",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.256Z",
+      "updatedAt": "2026-06-12T17:50:29.256Z"
+    },
+    {
+      "id": "cmqb82flw007kq6bvwc04xhbc",
+      "ventaId": "cmqb82flu007gq6bvi5bhgxiq",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.252Z",
+      "updatedAt": "2026-06-12T17:50:29.252Z"
+    },
+    {
+      "id": "cmqb82fls007eq6bvbdgme8pu",
+      "ventaId": "cmqb82flq007aq6bve22lvw33",
+      "status": "entregado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.249Z",
+      "updatedAt": "2026-06-12T19:30:20.526Z"
+    },
+    {
+      "id": "cmqb82flp0078q6bvvevu2lm0",
+      "ventaId": "cmqb82flm0074q6bv2isohcpi",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.245Z",
+      "updatedAt": "2026-06-12T17:50:29.245Z"
+    },
+    {
+      "id": "cmqb82fll0072q6bvd2yojdgw",
+      "ventaId": "cmqb82flj006yq6bvh3j7oxwb",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.242Z",
+      "updatedAt": "2026-06-12T17:50:29.242Z"
+    },
+    {
+      "id": "cmqb82fli006wq6bveuh0term",
+      "ventaId": "cmqb82flf006sq6bv6cb39w64",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.238Z",
+      "updatedAt": "2026-06-12T17:50:29.238Z"
+    },
+    {
+      "id": "cmqb82fle006qq6bvu6um86d4",
+      "ventaId": "cmqb82flb006mq6bvtoo6o6qx",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.234Z",
+      "updatedAt": "2026-06-12T17:50:29.234Z"
+    },
+    {
+      "id": "cmqb82fla006kq6bvshewhyil",
+      "ventaId": "cmqb82fl8006gq6bv3xftndl0",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.231Z",
+      "updatedAt": "2026-06-12T17:50:29.231Z"
+    },
+    {
+      "id": "cmqb82fl7006eq6bvqf7yz2jw",
+      "ventaId": "cmqb82fl5006aq6bvfcvrvth5",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.227Z",
+      "updatedAt": "2026-06-12T17:50:29.227Z"
+    },
+    {
+      "id": "cmqb82fl30068q6bvbzk8qovs",
+      "ventaId": "cmqb82fl10064q6bv22kougde",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.224Z",
+      "updatedAt": "2026-06-12T17:50:29.224Z"
+    },
+    {
+      "id": "cmqb82fl00062q6bvo3ln4i01",
+      "ventaId": "cmqb82fky005yq6bvmn9vwdr1",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.220Z",
+      "updatedAt": "2026-06-12T17:50:29.220Z"
+    },
+    {
+      "id": "cmqb82fkw005wq6bvyvwzmfag",
+      "ventaId": "cmqb82fku005sq6bv1bly80dh",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.217Z",
+      "updatedAt": "2026-06-12T17:50:29.217Z"
+    },
+    {
+      "id": "cmqb82fkt005qq6bve883tzcc",
+      "ventaId": "cmqb82fkq005mq6bv0ioa9pan",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.213Z",
+      "updatedAt": "2026-06-12T17:50:29.213Z"
+    },
+    {
+      "id": "cmqb82fko005kq6bvwxiw77ut",
+      "ventaId": "cmqb82fkk005gq6bvg9p695wt",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.208Z",
+      "updatedAt": "2026-06-12T17:50:29.208Z"
+    },
+    {
+      "id": "cmqb82fki005eq6bvjjl2nor3",
+      "ventaId": "cmqb82fke005aq6bvkzc2o3vy",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.202Z",
+      "updatedAt": "2026-06-12T17:50:29.202Z"
+    },
+    {
+      "id": "cmqb82fjz0058q6bv3mef3qsr",
+      "ventaId": "cmqb82fjw0054q6bvc6mvua9e",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.183Z",
+      "updatedAt": "2026-06-12T17:50:29.183Z"
+    },
+    {
+      "id": "cmqb82fju0052q6bvij0irrwc",
+      "ventaId": "cmqb82fjr004yq6bvdrit421f",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.178Z",
+      "updatedAt": "2026-06-12T17:50:29.178Z"
+    },
+    {
+      "id": "cmqb82fjp004wq6bvxc0i980h",
+      "ventaId": "cmqb82fjn004sq6bv4eswzw8y",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.174Z",
+      "updatedAt": "2026-06-12T17:50:29.174Z"
+    },
+    {
+      "id": "cmqb82fjl004qq6bv7gq5p147",
+      "ventaId": "cmqb82fji004mq6bvhle0d7ql",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.169Z",
+      "updatedAt": "2026-06-12T17:50:29.169Z"
+    },
+    {
+      "id": "cmqb82fjh004kq6bv6q6yuigw",
+      "ventaId": "cmqb82fje004gq6bvbl26t1yc",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.165Z",
+      "updatedAt": "2026-06-12T17:50:29.165Z"
+    },
+    {
+      "id": "cmqb82fjd004eq6bvrf8w8cfg",
+      "ventaId": "cmqb82fja004aq6bvd4lk8t1u",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.161Z",
+      "updatedAt": "2026-06-12T17:50:29.161Z"
+    },
+    {
+      "id": "cmqb82fj80048q6bvge3a3xsg",
+      "ventaId": "cmqb82fj60044q6bvianym44f",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.157Z",
+      "updatedAt": "2026-06-12T17:50:29.157Z"
+    },
+    {
+      "id": "cmqb82fj40042q6bvftehsn6p",
+      "ventaId": "cmqb82fiz003yq6bv2lar505q",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.152Z",
+      "updatedAt": "2026-06-12T17:50:29.152Z"
+    },
+    {
+      "id": "cmqb82fir003wq6bvwjzp73uw",
+      "ventaId": "cmqb82fid003sq6bvvoprvlt7",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.139Z",
+      "updatedAt": "2026-06-12T17:50:29.139Z"
+    },
+    {
+      "id": "cmqb82fic003qq6bv6qqibve0",
+      "ventaId": "cmqb82fi9003mq6bvsccor86g",
+      "status": "confirmado",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.124Z",
+      "updatedAt": "2026-06-12T19:29:44.982Z"
+    },
+    {
+      "id": "cmqb82fi7003kq6bvt8phklhl",
+      "ventaId": "cmqb82fi4003gq6bvvo1f64nz",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.120Z",
+      "updatedAt": "2026-06-12T17:50:29.120Z"
+    },
+    {
+      "id": "cmqb82fi3003eq6bv8ixnspg0",
+      "ventaId": "cmqb82fi0003aq6bvj8ueqy7c",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.115Z",
+      "updatedAt": "2026-06-12T17:50:29.115Z"
+    },
+    {
+      "id": "cmqb82fhy0038q6bvagsr2q3y",
+      "ventaId": "cmqb82fhv0034q6bvulbi7xe4",
+      "status": "pendiente",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.111Z",
+      "updatedAt": "2026-06-12T17:50:29.111Z"
+    }
+  ],
+  "clientes": [
+    {
+      "id": "cmqb82fgi001eq6bvl265k41a",
+      "name": "DANIEL",
+      "phone": "981354349",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.059Z"
+    },
+    {
+      "id": "cmqb82fgk001gq6bvdxhe3276",
+      "name": "FABIAN",
+      "phone": "930802194",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.061Z"
+    },
+    {
+      "id": "cmqb82fgm001iq6bvoxf7u0wd",
+      "name": "ALESKA",
+      "phone": "978693355",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.062Z"
+    },
+    {
+      "id": "cmqb82fgo001kq6bvwaud1hlt",
+      "name": "DUKI",
+      "phone": "934 738 679",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.064Z"
+    },
+    {
+      "id": "cmqb82fgp001mq6bvd0sofhh0",
+      "name": "SALSEDO DOMINGUEZ",
+      "phone": "",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.066Z"
+    },
+    {
+      "id": "cmqb82fgr001oq6bvb7uymsmg",
+      "name": "ANGEL ARON",
+      "phone": "912628937",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.067Z"
+    },
+    {
+      "id": "cmqb82fgs001qq6bvdt8xtuj3",
+      "name": "ABDAIR",
+      "phone": "",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.068Z"
+    },
+    {
+      "id": "cmqb82fgx001sq6bvboaoauw6",
+      "name": "MATIAS MORILLO",
+      "phone": "",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.074Z"
+    },
+    {
+      "id": "cmqb82fgz001uq6bvlyis2ro8",
+      "name": "ESTEFANO",
+      "phone": "",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.075Z"
+    },
+    {
+      "id": "cmqb82fh1001wq6bvebrmfdy0",
+      "name": "FABRICIO",
+      "phone": "962940312",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.077Z"
+    },
+    {
+      "id": "cmqb82fh2001yq6bv66c9w31w",
+      "name": "SEBASTIAN",
+      "phone": "924602079",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.079Z"
+    },
+    {
+      "id": "cmqb82fh40020q6bvvr5kt2us",
+      "name": "LAMS",
+      "phone": "932075471",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.080Z"
+    },
+    {
+      "id": "cmqb82fh50022q6bviygqodoa",
+      "name": "ANTONELLA",
+      "phone": "967823012",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.082Z"
+    },
+    {
+      "id": "cmqb82fh70024q6bvkfbebe1m",
+      "name": "BERTHA BEATRIZ",
+      "phone": "918190277",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.083Z"
+    },
+    {
+      "id": "cmqb82fh90026q6bvqwdrx58r",
+      "name": "Toshiro",
+      "phone": "932634385",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.085Z"
+    },
+    {
+      "id": "cmqb82fha0028q6bvnl6tykb1",
+      "name": "Evelin JIMez",
+      "phone": "941341083",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.086Z"
+    },
+    {
+      "id": "cmqb82fhb002aq6bv6qxkppbh",
+      "name": "JHONEL CESPED",
+      "phone": "921482403",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.088Z"
+    },
+    {
+      "id": "cmqb82fhd002cq6bvbfuct7jx",
+      "name": "AMGELO TULLUNAME",
+      "phone": "912628937",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.089Z"
+    },
+    {
+      "id": "cmqb82fhe002eq6bvyv2ppj4y",
+      "name": "gonzalo gonzales",
+      "phone": "987246252",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.091Z"
+    },
+    {
+      "id": "cmqb82fhg002gq6bvhemkof0q",
+      "name": "valeria",
+      "phone": "920829088",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.093Z"
+    },
+    {
+      "id": "cmqb82fhi002iq6bvg0xuzrms",
+      "name": "gonzaloortiz",
+      "phone": "",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.094Z"
+    },
+    {
+      "id": "cmqb82fhj002kq6bv02imlj8i",
+      "name": "abel",
+      "phone": "946029060",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.096Z"
+    },
+    {
+      "id": "cmqb82fhl002mq6bvw2v2l4pj",
+      "name": "Rodrigo cruz",
+      "phone": "",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.097Z"
+    },
+    {
+      "id": "cmqb82fhm002oq6bvoryl7mw1",
+      "name": "LUIGI",
+      "phone": "",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.099Z"
+    },
+    {
+      "id": "cmqb82fho002qq6bvbfmt24pb",
+      "name": "ALBEYRO GONZALES",
+      "phone": "",
+      "notes": "",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.100Z"
+    }
+  ],
+  "gastos": [
+    {
+      "id": "cmqb82fma008cq6bvckotk1v3",
+      "tipo": "inversion",
+      "desc": "BORDADO",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 150,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.266Z"
+    },
+    {
+      "id": "cmqb82fm9008aq6bvmai9beb7",
+      "tipo": "inversion",
+      "desc": "DISEÑO",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 23,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.265Z"
+    },
+    {
+      "id": "cmqb82fm80088q6bv3onf5w57",
+      "tipo": "inversion",
+      "desc": "MOLDE",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 65,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.264Z"
+    },
+    {
+      "id": "cmqb82fm60084q6bvq6erlvh3",
+      "tipo": "inversion",
+      "desc": "COSTURA",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 420,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.263Z"
+    },
+    {
+      "id": "cmqb82fm70086q6bvkcqp7wx6",
+      "tipo": "inversion",
+      "desc": "TELA/PARCHE",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 238,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.263Z"
+    },
+    {
+      "id": "cmqb82fm50082q6bv5q7xdjcc",
+      "tipo": "inversion",
+      "desc": "TELAFRANELA",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 738,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.262Z"
+    },
+    {
+      "id": "cmqb82fm40080q6bvhnmw7343",
+      "tipo": "inversion",
+      "desc": "RIP EXTRA",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 8,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.261Z"
+    },
+    {
+      "id": "cmqb82fm3007yq6bv7kvmp2vu",
+      "tipo": "inversion",
+      "desc": "UTILIDADES",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 19,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.260Z"
+    },
+    {
+      "id": "cmqb82fm3007wq6bvgxlax97r",
+      "tipo": "gasto",
+      "desc": "COMIDA",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 50,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.259Z"
+    },
+    {
+      "id": "cmqb82fm2007uq6bvdlv6yoew",
+      "tipo": "gasto",
+      "desc": "MOTO",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 20,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.258Z"
+    },
+    {
+      "id": "cmqb82fm1007sq6bvl1513c1q",
+      "tipo": "gasto",
+      "desc": "TIKTOK ADS",
+      "categoria": "Inversión inicial",
+      "dropId": "cmqb82fgg001cq6bvogbc21sq",
+      "monto": 24,
+      "fecha": "2026-05-15",
+      "businessId": "cmqb80war0018q6bvjmnll1np",
+      "createdAt": "2026-06-12T17:50:29.257Z"
+    }
+  ]
+}
