@@ -98,13 +98,28 @@ export default function AppScreen() {
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    const saved = localStorage.getItem('zr-theme') as ThemeMode | null
-    if (saved && ['light', 'dark', 'black'].includes(saved)) setTheme(saved)
+    // Cargar tema desde DB primero, fallback a localStorage
+    const loadTheme = async () => {
+      try {
+        const res = await fetch('/api/user/theme')
+        if (res.ok) {
+          const { theme: dbTheme } = await res.json()
+          setTheme(dbTheme as ThemeMode)
+          return
+        }
+      } catch {}
+      // fallback localStorage
+      const saved = localStorage.getItem('zr-theme') as ThemeMode | null
+      if (saved && ['light', 'dark', 'black'].includes(saved)) setTheme(saved)
+    }
+    loadTheme()
   }, [])
 
   useEffect(() => {
     localStorage.setItem('zr-theme', theme)
     document.documentElement.classList.toggle('dark', theme !== 'light')
+    // Guardar en DB (sin bloquear)
+    fetch('/api/user/theme', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ theme }) }).catch(() => {})
   }, [theme])
 
   const loadDrops = useCallback(async () => {

@@ -38,6 +38,7 @@ model User {
   password   String   // hashed
   role       String   @default("owner") // owner, admin, member
   businessId String
+  theme      String   @default("dark") // light, dark, black
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
