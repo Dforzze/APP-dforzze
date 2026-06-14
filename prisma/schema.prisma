@@ -1,0 +1,145 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ── MULTI-TENANT: Cada negocio tiene su propio espacio aislado ──
+model Business {
+  id         String   @id @default(cuid())
+  name       String
+  slug       String   @unique
+  plan       String   @default("free") // free, pro, premium
+  cajaManual Float    @default(0) // Caja disponible manual
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  users      User[]
+  drops      Drop[]
+  productos  Producto[]
+  ventas     Venta[]
+  pedidos    Pedido[]
+  clientes   Cliente[]
+  gastos     Gasto[]
+}
+
+model User {
+  id         String   @id @default(cuid())
+  email      String   @unique
+  name       String?
+  password   String   // hashed
+  role       String   @default("owner") // owner, admin, member
+  businessId String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  business Business @relation(fields: [businessId], references: [id])
+}
+
+model Drop {
+  id         String   @id @default(cuid())
+  name       String
+  desc       String   @default("")
+  date       String   @default("")
+  status     String   @default("activo") // activo, proximamente, cerrado
+  businessId String
+  createdAt  DateTime @default(now())
+
+  business  Business   @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  productos Producto[]
+  gastos    Gasto[]
+}
+
+model Producto {
+  id            String   @id @default(cuid())
+  name          String
+  dropId        String?
+  color         String
+  talla         String
+  stock         Int      @default(0)
+  precio        Float    @default(0)
+  precioMayor   Float    @default(0)
+  costo         Float    @default(0)
+  minStock      Int      @default(2)
+  businessId    String
+  createdAt     DateTime @default(now())
+
+  business  Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  drop      Drop?    @relation(fields: [dropId], references: [id], onDelete: SetNull)
+  ventaItems VentaItem[]
+}
+
+model Venta {
+  id           String   @id @default(cuid())
+  cliente      String
+  vendedor     String   @default("")
+  fecha        String
+  dropId       String?
+  metodoPago   String   @default("Efectivo")
+  nota         String   @default("")
+  total        Float    @default(0)
+  comisionPct  Float    @default(0)
+  comisionMonto Float   @default(0)
+  businessId   String
+  createdAt    DateTime @default(now())
+
+  business Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  items    VentaItem[]
+  pedido   Pedido?
+}
+
+model VentaItem {
+  id         String @id @default(cuid())
+  ventaId    String
+  productoId String
+  productName String
+  color      String
+  talla      String
+  qty        Int    @default(1)
+  precio     Float  @default(0)
+  subtotal   Float  @default(0)
+
+  venta    Venta    @relation(fields: [ventaId], references: [id], onDelete: Cascade)
+  producto Producto @relation(fields: [productoId], references: [id], onDelete: Cascade)
+}
+
+model Pedido {
+  id         String @id @default(cuid())
+  ventaId    String @unique
+  status     String @default("pendiente") // pendiente, confirmado, enviado, entregado, cancelado
+  businessId String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  business Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  venta    Venta    @relation(fields: [ventaId], references: [id], onDelete: Cascade)
+}
+
+model Cliente {
+  id         String   @id @default(cuid())
+  name       String
+  phone      String   @default("")
+  notes      String   @default("")
+  businessId String
+  createdAt  DateTime @default(now())
+
+  business Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+}
+
+model Gasto {
+  id         String   @id @default(cuid())
+  tipo       String   // gasto, inversion, retiro
+  desc       String
+  categoria  String   @default("Otros")
+  dropId     String?
+  monto      Float
+  fecha      String
+  businessId String
+  createdAt  DateTime @default(now())
+
+  business Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  drop     Drop?    @relation(fields: [dropId], references: [id], onDelete: SetNull)
+}
