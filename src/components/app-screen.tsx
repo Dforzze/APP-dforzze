@@ -14,7 +14,7 @@ import {
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription,
 } from '@/components/ui/dialog'
-import { LogOut, Moon, Sun, Upload, Loader2, Download, Monitor } from 'lucide-react'
+import { LogOut, Moon, Sun, Upload, Loader2, Download, Monitor, LayoutDashboard, TrendingUp, Target, ShoppingCart, Package, Users, Shirt, Layers, DollarSign, Truck, FileText } from 'lucide-react'
 import Image from 'next/image'
 import { api, type Drop } from '@/lib/api'
 import { toast } from 'sonner'
@@ -37,40 +37,40 @@ const GROUPS = [
   {
     id: 'inicio',
     label: 'Inicio',
-    icon: '📊',
+    Icon: LayoutDashboard,
     tabs: [
-      { id: 'dashboard', label: 'Dashboard', icon: '📊' },
-      { id: 'analytics', label: 'Analytics', icon: '📈' },
-      { id: 'metas', label: 'Metas', icon: '🎯' },
+      { id: 'dashboard', label: 'Dashboard' },
+      { id: 'analytics', label: 'Analytics' },
+      { id: 'metas', label: 'Metas' },
     ],
   },
   {
     id: 'ventas',
     label: 'Ventas',
-    icon: '💰',
+    Icon: ShoppingCart,
     tabs: [
-      { id: 'ventas', label: 'Ventas', icon: '💰' },
-      { id: 'pedidos', label: 'Pedidos', icon: '📦' },
-      { id: 'clientes', label: 'Clientes', icon: '👥' },
+      { id: 'ventas', label: 'Ventas' },
+      { id: 'pedidos', label: 'Pedidos' },
+      { id: 'clientes', label: 'Clientes' },
     ],
   },
   {
     id: 'productos',
     label: 'Productos',
-    icon: '👕',
+    Icon: Shirt,
     tabs: [
-      { id: 'inventario', label: 'Inventario', icon: '👕' },
-      { id: 'drops', label: 'Drops', icon: '🎯' },
+      { id: 'inventario', label: 'Inventario' },
+      { id: 'drops', label: 'Drops' },
     ],
   },
   {
     id: 'gestion',
     label: 'Gestión',
-    icon: '💼',
+    Icon: DollarSign,
     tabs: [
-      { id: 'gastos', label: 'Gastos', icon: '💸' },
-      { id: 'proveedores', label: 'Proveedores', icon: '🏭' },
-      { id: 'notas', label: 'Notas', icon: '📝' },
+      { id: 'gastos', label: 'Gastos' },
+      { id: 'proveedores', label: 'Proveedores' },
+      { id: 'notas', label: 'Notas' },
     ],
   },
 ] as const
@@ -232,40 +232,43 @@ export default function AppScreen() {
 
           {/* Desktop: grupos + sub-tabs */}
           <nav className="hidden lg:flex items-center gap-1">
-            {GROUPS.map(group => (
-              <div key={group.id} className="relative group">
-                <button
-                  onClick={() => handleGroupChange(group.id)}
-                  className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all flex items-center gap-1.5"
-                  style={activeGroup === group.id
-                    ? { background: GRAD, color: 'white' }
-                    : { color: muted }}>
-                  <span>{group.icon}</span>
-                  <span>{group.label}</span>
-                  {group.tabs.length > 1 && (
-                    <span className="text-[10px] opacity-60">▾</span>
-                  )}
-                </button>
+            {GROUPS.map(group => {
+              const Icon = group.Icon
+              return (
+                <div key={group.id} className="relative group">
+                  <button
+                    onClick={() => handleGroupChange(group.id)}
+                    className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all flex items-center gap-1.5"
+                    style={activeGroup === group.id
+                      ? { background: GRAD, color: 'white' }
+                      : { color: muted }}>
+                    <Icon className="w-4 h-4" />
+                    <span>{group.label}</span>
+                    {group.tabs.length > 1 && (
+                      <span className="text-[10px] opacity-60">▾</span>
+                    )}
+                  </button>
 
-                {/* Dropdown sub-tabs on hover */}
-                {group.tabs.length > 1 && (
-                  <div className="absolute top-full left-0 pt-1 hidden group-hover:block z-50" style={{ minWidth: '140px' }}>
-                    <div className="rounded-xl shadow-lg border overflow-hidden" style={{ background: card, borderColor: border }}>
-                      {group.tabs.map(tab => (
-                        <button key={tab.id} onClick={() => handleTabChange(tab.id as TabId)}
-                          className="w-full text-left px-3 py-2 text-sm flex items-center gap-2 transition-colors"
-                          style={{
-                            background: activeTab === tab.id ? 'rgba(139,92,246,0.1)' : 'transparent',
-                            color: activeTab === tab.id ? '#a78bfa' : text,
-                          }}>
-                          <span>{tab.icon}</span><span>{tab.label}</span>
-                        </button>
-                      ))}
+                  {/* Dropdown sub-tabs on hover */}
+                  {group.tabs.length > 1 && (
+                    <div className="absolute top-full left-0 pt-1 hidden group-hover:block z-50" style={{ minWidth: '140px' }}>
+                      <div className="rounded-xl shadow-lg border overflow-hidden" style={{ background: card, borderColor: border }}>
+                        {group.tabs.map(tab => (
+                          <button key={tab.id} onClick={() => handleTabChange(tab.id as TabId)}
+                            className="w-full text-left px-3 py-2 text-sm flex items-center gap-2 transition-colors"
+                            style={{
+                              background: activeTab === tab.id ? 'rgba(139,92,246,0.1)' : 'transparent',
+                              color: activeTab === tab.id ? '#a78bfa' : text,
+                            }}>
+                            <span>{tab.label}</span>
+                          </button>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              )
+            })}
           </nav>
 
           {/* Right: theme + user */}
@@ -313,14 +316,14 @@ export default function AppScreen() {
 
         {/* Mobile: sub-tabs del grupo activo */}
         <div className="lg:hidden border-t overflow-x-auto" style={{ borderColor: border }}>
-          <div className="flex items-center gap-1 px-3 py-2 min-w-max">
+          <div className="flex items-center gap-1 px-3 py-1.5 min-w-max">
             {currentGroup.tabs.map(tab => (
               <button key={tab.id} onClick={() => handleTabChange(tab.id as TabId)}
-                className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 whitespace-nowrap"
+                className="px-3 py-1 rounded-lg text-xs font-medium transition-all whitespace-nowrap"
                 style={activeTab === tab.id
-                  ? { background: GRAD, color: 'white' }
+                  ? { background: 'rgba(139,92,246,0.15)', color: '#a78bfa', fontWeight: 700 }
                   : { color: muted }}>
-                <span>{tab.icon}</span><span>{tab.label}</span>
+                {tab.label}
               </button>
             ))}
           </div>
@@ -335,18 +338,30 @@ export default function AppScreen() {
       {/* ── BOTTOM NAV (móvil) ──────────────────────────────────── */}
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 border-t backdrop-blur-xl"
         style={{ background: headerBg, borderColor: border }}>
-        <div className="flex items-center justify-around px-2 py-2">
-          {GROUPS.map(group => (
-            <button key={group.id} onClick={() => handleGroupChange(group.id)}
-              className="flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-all"
-              style={activeGroup === group.id ? { background: 'rgba(139,92,246,0.12)' } : {}}>
-              <span className="text-xl leading-none">{group.icon}</span>
-              <span className="text-[10px] font-semibold"
-                style={{ color: activeGroup === group.id ? '#a78bfa' : muted }}>
-                {group.label}
-              </span>
-            </button>
-          ))}
+        <div className="flex items-center justify-around px-2 py-1">
+          {GROUPS.map(group => {
+            const Icon = group.Icon
+            const isActive = activeGroup === group.id
+            return (
+              <button key={group.id} onClick={() => handleGroupChange(group.id)}
+                className="flex flex-col items-center gap-1 px-4 py-2 rounded-2xl transition-all"
+                style={isActive ? { background: 'rgba(139,92,246,0.12)' } : {}}>
+                <div className="relative">
+                  <Icon
+                    className="w-5 h-5 transition-all"
+                    style={{ color: isActive ? '#a78bfa' : muted, strokeWidth: isActive ? 2.5 : 1.5 }}
+                  />
+                  {isActive && (
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-purple-400" />
+                  )}
+                </div>
+                <span className="text-[10px] font-semibold tracking-wide"
+                  style={{ color: isActive ? '#a78bfa' : muted }}>
+                  {group.label}
+                </span>
+              </button>
+            )
+          })}
         </div>
       </nav>
 
