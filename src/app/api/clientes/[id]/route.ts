@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { db } from "@/lib/db"
 import { requireAuth } from "@/lib/auth-utils"
+import { logHistorial } from "@/lib/historial"
 
 // PUT /api/clientes/[id] — Update a cliente
 export async function PUT(
@@ -33,6 +34,16 @@ export async function PUT(
         ...(phone !== undefined && { phone }),
         ...(notes !== undefined && { notes }),
       },
+    })
+
+    const userName = (session.user as { name?: string }).name || ""
+    logHistorial({
+      accion: "editar",
+      entidad: "cliente",
+      entidadId: id,
+      descripcion: `Cliente "${cliente.name}" editado`,
+      usuario: userName,
+      businessId,
     })
 
     return NextResponse.json(cliente)
@@ -69,6 +80,16 @@ export async function DELETE(
     }
 
     await db.cliente.delete({ where: { id } })
+
+    const userName = (session.user as { name?: string }).name || ""
+    logHistorial({
+      accion: "eliminar",
+      entidad: "cliente",
+      entidadId: id,
+      descripcion: `Cliente "${existing.name}" eliminado`,
+      usuario: userName,
+      businessId,
+    })
 
     return NextResponse.json({ message: "Cliente eliminado" })
   } catch (error: unknown) {

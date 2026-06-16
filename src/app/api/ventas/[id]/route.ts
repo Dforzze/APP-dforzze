@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { db } from "@/lib/db"
 import { requireAuth } from "@/lib/auth-utils"
+import { logHistorial } from "@/lib/historial"
 
 // PUT /api/ventas/[id] — Update a venta's metadata (cliente, vendedor, metodoPago, nota)
 export async function PUT(
@@ -57,6 +58,16 @@ export async function PUT(
       },
     })
 
+    const userName = (session.user as { name?: string }).name || ""
+    logHistorial({
+      accion: "editar",
+      entidad: "venta",
+      entidadId: id,
+      descripcion: `Venta de ${venta.cliente} editada`,
+      usuario: userName,
+      businessId,
+    })
+
     return NextResponse.json(venta)
   } catch (error: unknown) {
     if (error instanceof Error && error.message === "No autenticado") {
@@ -104,6 +115,16 @@ export async function DELETE(
 
       // Delete the venta (cascades will handle items and pedido)
       await tx.venta.delete({ where: { id } })
+    })
+
+    const userName = (session.user as { name?: string }).name || ""
+    logHistorial({
+      accion: "eliminar",
+      entidad: "venta",
+      entidadId: id,
+      descripcion: `Venta de ${existing.cliente} eliminada (stock restaurado)`,
+      usuario: userName,
+      businessId,
     })
 
     return NextResponse.json({ message: "Venta eliminada y stock restaurado" })

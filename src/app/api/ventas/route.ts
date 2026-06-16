@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { db } from "@/lib/db"
 import { requireAuth } from "@/lib/auth-utils"
+import { logHistorial } from "@/lib/historial"
 
 // GET /api/ventas — List all ventas for business with optional filters
 export async function GET(req: NextRequest) {
@@ -220,6 +221,16 @@ export async function POST(req: NextRequest) {
           pedido: true,
         },
       })
+    })
+
+    const userName = (session.user as { name?: string }).name || ""
+    logHistorial({
+      accion: "crear",
+      entidad: "venta",
+      entidadId: venta?.id || "",
+      descripcion: `Venta de ${cliente.trim()} por $${total.toFixed(0)} — ${metodoPago || "Efectivo"}`,
+      usuario: userName,
+      businessId,
     })
 
     return NextResponse.json(venta, { status: 201 })

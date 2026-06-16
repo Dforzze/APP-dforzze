@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { db } from "@/lib/db"
 import { requireAuth } from "@/lib/auth-utils"
+import { logHistorial } from "@/lib/historial"
 
 // GET /api/clientes — List all clientes for business with purchase stats
 export async function GET() {
@@ -82,6 +83,16 @@ export async function POST(req: NextRequest) {
         notes: notes || "",
         businessId,
       },
+    })
+
+    const userName = (session.user as { name?: string }).name || ""
+    logHistorial({
+      accion: "crear",
+      entidad: "cliente",
+      entidadId: cliente.id,
+      descripcion: `Cliente "${cliente.name}" agregado`,
+      usuario: userName,
+      businessId,
     })
 
     return NextResponse.json(cliente, { status: 201 })

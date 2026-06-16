@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { db } from "@/lib/db"
 import { requireAuth } from "@/lib/auth-utils"
+import { logHistorial } from "@/lib/historial"
 
 // GET /api/gastos — List all gastos for business with optional filters
 export async function GET(req: NextRequest) {
@@ -95,6 +96,16 @@ export async function POST(req: NextRequest) {
       include: {
         drop: { select: { id: true, name: true } },
       },
+    })
+
+    const userName = (session.user as { name?: string }).name || ""
+    logHistorial({
+      accion: "crear",
+      entidad: "gasto",
+      entidadId: gasto.id,
+      descripcion: `${gasto.tipo === "gasto" ? "Gasto" : gasto.tipo === "inversion" ? "Inversión" : "Retiro"}: "${gasto.desc}" por $${gasto.monto}`,
+      usuario: userName,
+      businessId,
     })
 
     return NextResponse.json(gasto, { status: 201 })

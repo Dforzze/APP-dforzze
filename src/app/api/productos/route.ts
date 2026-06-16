@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { db } from "@/lib/db"
 import { requireAuth } from "@/lib/auth-utils"
+import { logHistorial } from "@/lib/historial"
 
 // GET /api/productos — List all productos for the business with optional filters
 export async function GET(req: NextRequest) {
@@ -102,6 +103,16 @@ export async function POST(req: NextRequest) {
       include: {
         drop: { select: { id: true, name: true } },
       },
+    })
+
+    const userName = (session.user as { name?: string }).name || ""
+    logHistorial({
+      accion: "crear",
+      entidad: "producto",
+      entidadId: producto.id,
+      descripcion: `Producto "${producto.name}" ${producto.color} ${producto.talla} creado (stock: ${producto.stock})`,
+      usuario: userName,
+      businessId,
     })
 
     return NextResponse.json(producto, { status: 201 })

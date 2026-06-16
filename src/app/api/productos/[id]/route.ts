@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { db } from "@/lib/db"
 import { requireAuth } from "@/lib/auth-utils"
+import { logHistorial } from "@/lib/historial"
 
 // PUT /api/productos/[id] — Update a producto (including stock updates with +/-)
 export async function PUT(
@@ -66,6 +67,19 @@ export async function PUT(
       },
     })
 
+    const userName = (session.user as { name?: string }).name || ""
+    const stockMsg = stockAdjust !== undefined
+      ? ` (stock: ${existing.stock} → ${newStock})`
+      : typeof stock === "number" ? ` (stock actualizado: ${newStock})` : ""
+    logHistorial({
+      accion: "editar",
+      entidad: "producto",
+      entidadId: id,
+      descripcion: `Producto "${producto.name}" editado${stockMsg}`,
+      usuario: userName,
+      businessId,
+    })
+
     return NextResponse.json(producto)
   } catch (error: unknown) {
     if (error instanceof Error && error.message === "No autenticado") {
@@ -100,6 +114,16 @@ export async function DELETE(
     }
 
     await db.producto.delete({ where: { id } })
+
+    const userName = (session.user as { name?: string }).name || ""
+    logHistorial({
+      accion: "eliminar",
+      entidad: "producto",
+      entidadId: id,
+      descripcion: `Producto "${existing.name}" ${existing.color} ${existing.talla} eliminado`,
+      usuario: userName,
+      businessId,
+    })
 
     return NextResponse.json({ message: "Producto eliminado" })
   } catch (error: unknown) {

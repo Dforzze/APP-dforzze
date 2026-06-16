@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { db } from "@/lib/db"
 import { requireAuth } from "@/lib/auth-utils"
+import { logHistorial } from "@/lib/historial"
 
 const VALID_STATUSES = ["pendiente", "confirmado", "enviado", "entregado", "cancelado"]
 
@@ -49,6 +50,17 @@ export async function PUT(
           },
         },
       },
+    })
+
+    const userName = (session.user as { name?: string }).name || ""
+    const clienteName = (pedido.venta as { cliente?: string })?.cliente || ""
+    logHistorial({
+      accion: "estado",
+      entidad: "pedido",
+      entidadId: id,
+      descripcion: `Pedido de ${clienteName} → ${status}`,
+      usuario: userName,
+      businessId,
     })
 
     return NextResponse.json(pedido)
