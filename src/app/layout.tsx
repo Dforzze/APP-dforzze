@@ -27,13 +27,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Dforzze" }],
   manifest: "/manifest.json",
   icons: {
-    icon: "/dforzze-logo-small.png",
-    apple: "/dforzze-logo.png",
+    icon: "/icon-ios.png",
+    apple: "/icon-ios.png",
   },
   appleWebApp: {
     capable: true,
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
     title: "Dforzze",
+    startupImage: "/icon-ios.png",
   },
 };
 
