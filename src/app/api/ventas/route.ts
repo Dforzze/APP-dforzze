@@ -12,11 +12,25 @@ export async function GET(req: NextRequest) {
     const search = searchParams.get("search")
     const dropId = searchParams.get("dropId")
     const productoId = searchParams.get("producto")
+    const fechaDesde = searchParams.get("fechaDesde")
+    const fechaHasta = searchParams.get("fechaHasta")
+    const metodoPago = searchParams.get("metodoPago")
 
     const where: Record<string, unknown> = { businessId }
 
     if (dropId) {
       where.dropId = dropId
+    }
+
+    if (metodoPago) {
+      where.metodoPago = metodoPago
+    }
+
+    if (fechaDesde || fechaHasta) {
+      const fechaFilter: Record<string, string> = {}
+      if (fechaDesde) fechaFilter.gte = fechaDesde
+      if (fechaHasta) fechaFilter.lte = fechaHasta
+      where.fecha = fechaFilter
     }
 
     if (search) {

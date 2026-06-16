@@ -309,6 +309,9 @@ export default function PedidosTab({ drops, loadDrops, theme }: Props) {
   const [search, setSearch] = useState('')
   const [filterStatus, setFilterStatus] = useState('all')
   const [filterDrop, setFilterDrop] = useState('all')
+  const [filterFechaDesde, setFilterFechaDesde] = useState('')
+  const [filterFechaHasta, setFilterFechaHasta] = useState('')
+  const [filterMetodoPago, setFilterMetodoPago] = useState('all')
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set())
 
   // Edit dialog
@@ -371,6 +374,27 @@ export default function PedidosTab({ drops, loadDrops, theme }: Props) {
       })
     }
 
+    if (filterFechaDesde) {
+      result = result.filter(p => {
+        const venta = p.venta as Venta | undefined
+        return venta && venta.fecha >= filterFechaDesde
+      })
+    }
+
+    if (filterFechaHasta) {
+      result = result.filter(p => {
+        const venta = p.venta as Venta | undefined
+        return venta && venta.fecha <= filterFechaHasta
+      })
+    }
+
+    if (filterMetodoPago && filterMetodoPago !== 'all') {
+      result = result.filter(p => {
+        const venta = p.venta as Venta | undefined
+        return venta?.metodoPago === filterMetodoPago
+      })
+    }
+
     if (search) {
       const q = search.toLowerCase()
       result = result.filter(p => {
@@ -387,7 +411,7 @@ export default function PedidosTab({ drops, loadDrops, theme }: Props) {
     }
 
     return result
-  }, [allPedidos, filterStatus, filterDrop, search])
+  }, [allPedidos, filterStatus, filterDrop, filterFechaDesde, filterFechaHasta, filterMetodoPago, search])
 
   // ── Group pedidos by cliente ──
   const groupedPedidos = useMemo(() => {
@@ -562,41 +586,72 @@ export default function PedidosTab({ drops, loadDrops, theme }: Props) {
       </div>
 
       {/* ── Filters ── */}
-      <div className="flex flex-col sm:flex-row gap-2">
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: s.textMuted }} />
-          <Input
-            placeholder="Buscar por cliente, vendedor, producto..."
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-            className="rounded-xl pl-9"
-            style={{
-              background: s.inputBg,
-              borderColor: s.inputBorder,
-              color: s.textPrimary,
-            }}
-          />
+      <div className="space-y-2">
+        <div className="flex flex-col sm:flex-row gap-2">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: s.textMuted }} />
+            <Input
+              placeholder="Buscar por cliente, vendedor, producto..."
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              className="rounded-xl pl-9"
+              style={{
+                background: s.inputBg,
+                borderColor: s.inputBorder,
+                color: s.textPrimary,
+              }}
+            />
+          </div>
+          <Select value={filterDrop} onValueChange={setFilterDrop}>
+            <SelectTrigger
+              className="rounded-xl w-full sm:w-48"
+              style={{
+                background: s.inputBg,
+                borderColor: s.inputBorder,
+                color: s.textPrimary,
+              }}
+            >
+              <SelectValue placeholder="Filtrar por drop" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Todos los drops</SelectItem>
+              {drops.map(d => (
+                <SelectItem key={d.id} value={d.id}>
+                  {d.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
-        <Select value={filterDrop} onValueChange={setFilterDrop}>
-          <SelectTrigger
-            className="rounded-xl w-full sm:w-48"
-            style={{
-              background: s.inputBg,
-              borderColor: s.inputBorder,
-              color: s.textPrimary,
-            }}
-          >
-            <SelectValue placeholder="Filtrar por drop" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">Todos los drops</SelectItem>
-            {drops.map(d => (
-              <SelectItem key={d.id} value={d.id}>
-                {d.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        
+        {/* Additional filters row */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          <Input
+            type="date"
+            placeholder="Desde"
+            value={filterFechaDesde}
+            onChange={e => setFilterFechaDesde(e.target.value)}
+            className="rounded-xl text-sm"
+            style={{ background: s.inputBg, borderColor: s.inputBorder, color: s.textPrimary }}
+          />
+          <Input
+            type="date"
+            placeholder="Hasta"
+            value={filterFechaHasta}
+            onChange={e => setFilterFechaHasta(e.target.value)}
+            className="rounded-xl text-sm"
+            style={{ background: s.inputBg, borderColor: s.inputBorder, color: s.textPrimary }}
+          />
+          <Select value={filterMetodoPago} onValueChange={setFilterMetodoPago}>
+            <SelectTrigger className="rounded-xl" style={{ background: s.inputBg, borderColor: s.inputBorder, color: s.textPrimary }}>
+              <SelectValue placeholder="Método de pago" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Todos</SelectItem>
+              {METODOS_PAGO.map(m => <SelectItem key={m} value={m}>{m}</SelectItem>)}
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       {/* ── Pedidos List (Grouped by Client) ── */}

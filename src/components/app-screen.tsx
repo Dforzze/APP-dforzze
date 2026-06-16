@@ -14,11 +14,12 @@ import {
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription,
 } from '@/components/ui/dialog'
-import { LogOut, Moon, Sun, Upload, Loader2, Download, Monitor, LayoutDashboard, TrendingUp, Target, ShoppingCart, Package, Users, Shirt, Layers, DollarSign, Truck, FileText } from 'lucide-react'
+import { LogOut, Moon, Sun, Upload, Loader2, Download, Monitor, LayoutDashboard, TrendingUp, Target, ShoppingCart, Package, Users, Shirt, Layers, DollarSign, Truck, FileText, Search } from 'lucide-react'
 import Image from 'next/image'
 import { api, type Drop } from '@/lib/api'
 import { toast } from 'sonner'
 import dynamic from 'next/dynamic'
+import GlobalSearch from '@/components/global-search'
 
 const DashboardTab = dynamic(() => import('@/components/tabs/dashboard-tab'))
 const DropsTab = dynamic(() => import('@/components/tabs/drops-tab'))
@@ -31,6 +32,7 @@ const AnalyticsTab = dynamic(() => import('@/components/tabs/analytics-tab'))
 const ProveedoresTab = dynamic(() => import('@/components/tabs/proveedores-tab'))
 const NotasTab = dynamic(() => import('@/components/tabs/notas-tab'))
 const MetasTab = dynamic(() => import('@/components/tabs/metas-tab'))
+const HistorialTab = dynamic(() => import('@/components/tabs/historial-tab'))
 
 // ── Grupos de navegación ──────────────────────────────────────────
 const GROUPS = [
@@ -71,11 +73,12 @@ const GROUPS = [
       { id: 'gastos', label: 'Gastos' },
       { id: 'proveedores', label: 'Proveedores' },
       { id: 'notas', label: 'Notas' },
+      { id: 'historial', label: 'Historial' },
     ],
   },
 ] as const
 
-type TabId = 'dashboard' | 'analytics' | 'metas' | 'ventas' | 'pedidos' | 'clientes' | 'inventario' | 'drops' | 'gastos' | 'proveedores' | 'notas'
+type TabId = 'dashboard' | 'analytics' | 'metas' | 'ventas' | 'pedidos' | 'clientes' | 'inventario' | 'drops' | 'gastos' | 'proveedores' | 'notas' | 'historial'
 type GroupId = typeof GROUPS[number]['id']
 type ThemeMode = 'light' | 'dark' | 'black'
 
@@ -95,6 +98,7 @@ export default function AppScreen() {
   const [importOpen, setImportOpen] = useState(false)
   const [importing, setImporting] = useState(false)
   const [downloading, setDownloading] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -113,6 +117,11 @@ export default function AppScreen() {
       if (saved && ['light', 'dark', 'black'].includes(saved)) setTheme(saved)
     }
     loadTheme()
+
+    // Register service worker for offline mode
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {})
+    }
   }, [])
 
   useEffect(() => {
@@ -128,6 +137,18 @@ export default function AppScreen() {
   }, [])
 
   useEffect(() => { loadDrops() }, [loadDrops])
+
+  // Global search keyboard shortcut
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault()
+        setSearchOpen(true)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   const handleTabChange = (tabId: TabId) => {
     setActiveTab(tabId)
@@ -209,6 +230,7 @@ export default function AppScreen() {
       case 'proveedores': return <ProveedoresTab {...props} />
       case 'metas': return <MetasTab {...props} />
       case 'notas': return <NotasTab {...props} />
+      case 'historial': return <HistorialTab {...props} />
       default: return null
     }
   }
@@ -271,8 +293,17 @@ export default function AppScreen() {
             })}
           </nav>
 
-          {/* Right: theme + user */}
+          {/* Right: search + theme + user */}
           <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setSearchOpen(true)}
+              className="rounded-xl h-9 w-9"
+              title="Buscar (Ctrl+K)"
+            >
+              <Search className="w-4 h-4" />
+            </Button>
             <Button variant="ghost" size="icon" onClick={() => setTheme(theme === 'light' ? 'dark' : theme === 'dark' ? 'black' : 'light')}
               className="rounded-xl h-9 w-9">
               {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
@@ -376,6 +407,9 @@ export default function AppScreen() {
           <span>© {new Date().getFullYear()} Todos los derechos reservados</span>
         </div>
       </footer>
+
+      {/* ── GLOBAL SEARCH ───────────────────────────────────────── */}
+      <GlobalSearch open={searchOpen} onOpenChange={setSearchOpen} theme={theme} />
 
       {/* ── IMPORT DIALOG ───────────────────────────────────────── */}
       <Dialog open={importOpen} onOpenChange={setImportOpen}>

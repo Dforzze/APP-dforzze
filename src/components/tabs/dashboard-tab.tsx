@@ -19,7 +19,6 @@ import {
   Package,
   DollarSign,
   TrendingUp,
-  AlertTriangle,
   ShoppingCart,
   Wallet,
   ArrowUpRight,
@@ -28,6 +27,9 @@ import {
   Banknote,
 } from 'lucide-react'
 import { toast } from 'sonner'
+import {
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, PieChart, Pie, Legend
+} from 'recharts'
 
 // ─── Theme Config ──────────────────────────────────────────────────────────
 
@@ -585,6 +587,100 @@ export default function DashboardTab({ drops, loadDrops, theme }: Props) {
           </div>
         </CardContent>
       </Card>
+
+      {/* ═══ Charts Section ═══ */}
+      <div className="grid md:grid-cols-2 gap-4">
+        {/* Ventas por mes */}
+        {data.topProducts && data.topProducts.length > 0 && (
+          <Card className="rounded-2xl" style={{ background: t.card, borderColor: t.border }}>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base flex items-center gap-2" style={{ color: t.text }}>
+                🏆 Top Productos por Ingreso
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={200}>
+                <BarChart data={data.topProducts.slice(0, 6)} layout="vertical" margin={{ left: 8, right: 16 }}>
+                  <XAxis type="number" tick={{ fontSize: 10, fill: t.muted }} tickFormatter={v => `S/${v}`} />
+                  <YAxis type="category" dataKey="name" tick={{ fontSize: 10, fill: t.text }} width={60} />
+                  <Tooltip
+                    formatter={(v: number) => [`S/ ${v.toFixed(0)}`, 'Ingresos']}
+                    contentStyle={{ background: t.card, border: `1px solid ${t.border}`, borderRadius: 8, fontSize: 12 }}
+                  />
+                  <Bar dataKey="revenue" radius={[0, 6, 6, 0]}>
+                    {data.topProducts.slice(0, 6).map((_: any, i: number) => (
+                      <Cell key={i} fill={['#8b5cf6','#ec4899','#6366f1','#10b981','#f59e0b','#3b82f6'][i % 6]} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Top Colores */}
+        {data.topColors && data.topColors.length > 0 && (
+          <Card className="rounded-2xl" style={{ background: t.card, borderColor: t.border }}>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base flex items-center gap-2" style={{ color: t.text }}>
+                🎨 Ventas por Color
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={200}>
+                <PieChart>
+                  <Pie
+                    data={data.topColors.slice(0, 6)}
+                    dataKey="qty"
+                    nameKey="color"
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={70}
+                    label={({ color, percent }) => `${color} ${(percent * 100).toFixed(0)}%`}
+                    labelLine={false}
+                  >
+                    {data.topColors.slice(0, 6).map((_: any, i: number) => (
+                      <Cell key={i} fill={['#8b5cf6','#ec4899','#f97316','#10b981','#3b82f6','#f59e0b'][i % 6]} />
+                    ))}
+                  </Pie>
+                  <Tooltip
+                    formatter={(v: number) => [v, 'unidades']}
+                    contentStyle={{ background: t.card, border: `1px solid ${t.border}`, borderRadius: 8, fontSize: 12 }}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        )}
+      </div>
+
+      {/* ═══ Top Tallas ═══ */}
+      {data.topTallas && data.topTallas.length > 0 && (
+        <Card className="rounded-2xl" style={{ background: t.card, borderColor: t.border }}>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base flex items-center gap-2" style={{ color: t.text }}>
+              📏 Ventas por Talla
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ResponsiveContainer width="100%" height={160}>
+              <BarChart data={data.topTallas} margin={{ top: 4, right: 16, left: 0, bottom: 0 }}>
+                <XAxis dataKey="talla" tick={{ fontSize: 11, fill: t.text }} />
+                <YAxis tick={{ fontSize: 10, fill: t.muted }} />
+                <Tooltip
+                  formatter={(v: number) => [v, 'unidades']}
+                  contentStyle={{ background: t.card, border: `1px solid ${t.border}`, borderRadius: 8, fontSize: 12 }}
+                />
+                <Bar dataKey="qty" radius={[6, 6, 0, 0]}>
+                  {data.topTallas.map((_: any, i: number) => (
+                    <Cell key={i} fill={['#8b5cf6','#ec4899','#6366f1','#10b981','#f59e0b','#3b82f6'][i % 6]} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </CardContent>
+        </Card>
+      )}
 
       {/* ═══ Caja Manual Edit Dialog ═══ */}
       <Dialog open={cajaDialogOpen} onOpenChange={setCajaDialogOpen}>

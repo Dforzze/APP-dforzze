@@ -29,6 +29,7 @@ model Business {
   compras    Compra[]
   notas      Nota[]
   metas      Meta[]
+  historial  Historial[]
 }
 
 model User {
@@ -199,6 +200,19 @@ model Meta {
   periodo    String   // YYYY-MM
   businessId String
   createdAt  DateTime @default(now())
+
+  business Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+}
+
+model Historial {
+  id          String   @id @default(cuid())
+  accion      String   // crear, editar, eliminar, estado
+  entidad     String   // venta, pedido, cliente, producto, etc
+  entidadId   String
+  descripcion String
+  usuario     String   @default("")
+  businessId  String
+  createdAt   DateTime @default(now())
 
   business Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
 }

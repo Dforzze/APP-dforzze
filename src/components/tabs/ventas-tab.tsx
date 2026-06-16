@@ -289,6 +289,9 @@ export default function VentasTab({ drops, loadDrops, theme }: Props) {
   // History filters
   const [searchVenta, setSearchVenta] = useState('')
   const [filterDropVenta, setFilterDropVenta] = useState('all')
+  const [filterFechaDesde, setFilterFechaDesde] = useState('')
+  const [filterFechaHasta, setFilterFechaHasta] = useState('')
+  const [filterMetodoPago, setFilterMetodoPago] = useState('all')
 
   // Delete / edit dialogs
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null)
@@ -315,6 +318,9 @@ export default function VentasTab({ drops, loadDrops, theme }: Props) {
       const filters: Record<string, string> = {}
       if (searchVenta) filters.search = searchVenta
       if (filterDropVenta && filterDropVenta !== 'all') filters.dropId = filterDropVenta
+      if (filterFechaDesde) filters.fechaDesde = filterFechaDesde
+      if (filterFechaHasta) filters.fechaHasta = filterFechaHasta
+      if (filterMetodoPago && filterMetodoPago !== 'all') filters.metodoPago = filterMetodoPago
       const data = await api.ventas.list(filters)
       setVentas(data)
     } catch {
@@ -322,7 +328,7 @@ export default function VentasTab({ drops, loadDrops, theme }: Props) {
     } finally {
       setLoading(false)
     }
-  }, [searchVenta, filterDropVenta])
+  }, [searchVenta, filterDropVenta, filterFechaDesde, filterFechaHasta, filterMetodoPago])
 
   const loadClientes = useCallback(async () => {
     try {
@@ -645,6 +651,58 @@ export default function VentasTab({ drops, loadDrops, theme }: Props) {
           </button>
         </div>
       </div>
+
+      {/* ═══════════════════════════════════════════════════════════════════════
+          HISTORIAL VIEW - FILTERS
+         ═══════════════════════════════════════════════════════════════════════ */}
+      {viewMode === 'historial' && (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+          <div>
+            <Label className="text-xs mb-1.5 block" style={{ color: ts.textMuted }}>Desde</Label>
+            <Input
+              type="date"
+              value={filterFechaDesde}
+              onChange={e => setFilterFechaDesde(e.target.value)}
+              className="rounded-xl"
+              style={{ background: ts.inputBg, borderColor: ts.inputBorder, color: ts.textPrimary }}
+            />
+          </div>
+          <div>
+            <Label className="text-xs mb-1.5 block" style={{ color: ts.textMuted }}>Hasta</Label>
+            <Input
+              type="date"
+              value={filterFechaHasta}
+              onChange={e => setFilterFechaHasta(e.target.value)}
+              className="rounded-xl"
+              style={{ background: ts.inputBg, borderColor: ts.inputBorder, color: ts.textPrimary }}
+            />
+          </div>
+          <div>
+            <Label className="text-xs mb-1.5 block" style={{ color: ts.textMuted }}>Método de pago</Label>
+            <Select value={filterMetodoPago} onValueChange={setFilterMetodoPago}>
+              <SelectTrigger className="rounded-xl" style={{ background: ts.inputBg, borderColor: ts.inputBorder, color: ts.textPrimary }}>
+                <SelectValue placeholder="Todos" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Todos</SelectItem>
+                {METODOS_PAGO.map(m => <SelectItem key={m} value={m}>{m}</SelectItem>)}
+              </SelectContent>
+            </Select>
+          </div>
+          <div>
+            <Label className="text-xs mb-1.5 block" style={{ color: ts.textMuted }}>Drop</Label>
+            <Select value={filterDropVenta} onValueChange={setFilterDropVenta}>
+              <SelectTrigger className="rounded-xl" style={{ background: ts.inputBg, borderColor: ts.inputBorder, color: ts.textPrimary }}>
+                <SelectValue placeholder="Todos" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Todos</SelectItem>
+                {drops.map(d => <SelectItem key={d.id} value={d.id}>{d.name}</SelectItem>)}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+      )}
 
       {/* ═══════════════════════════════════════════════════════════════════════
           NUEVA VENTA VIEW
