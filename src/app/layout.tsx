@@ -45,6 +45,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
+      <head>
+        {/* iOS PWA — Safari usa estos tags, ignora el manifest para íconos */}
+        <link rel="apple-touch-icon" href="/icon-ios.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icon-ios.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/icon-ios.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/icon-ios.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Dforzze" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
